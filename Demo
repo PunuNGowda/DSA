@@ -1,0 +1,231 @@
+[5/18, 9:26 AM] Amit Naik: void binary_search(int search_key,int array[100],int n)
+
+{
+
+    int mid,i,low,high;
+
+    low = 1;
+
+    high = n;
+
+    mid = (low + high)/2;
+
+    i=1;
+
+    while(search_key != array[mid])
+
+    {
+
+        if(search_key <= array[mid])
+
+        {
+
+            low = 1;
+
+            high = mid+1;
+
+            mid = (low+high)/2;
+
+        }
+
+        else
+
+        {
+
+            low = mid+1;
+
+            high = n;
+
+            mid = (low+high)/2;
+
+        }
+
+}
+
+    printf("__________________________________\n");
+
+    printf("location=%d\t",mid);
+
+    printf("Search_Key=%d Found!\n",search_key);
+
+    printf("__________________________________\n");
+
+}
+
+[5/18, 9:26 AM] Amit Naik: void linear_search(int search_key,int array[100],int n)
+
+    {
+
+        int i,location;
+
+        for(i=1;i<=n;i++)
+
+        {
+
+            if(search_key == array[i])
+
+            {
+
+                location = i;
+
+    printf("______________________________________\n");
+
+    printf("The location of Search Key = %d is %d\n",search_key,location);
+
+    printf("______________________________________\n");
+
+        }
+
+    }
+
+}
+
+[5/18, 9:29 AM] Amit Naik: void selectionSort(int arr[], int n)
+
+{
+
+int i, j, max, temp;
+
+for (i = 0; i < n - 1; i++)
+
+{
+
+    max = i;
+
+    for (j = i + 1; j < n; j++)
+
+    {
+
+        if (arr[j] > arr[max])
+
+        {
+
+            max = j;
+
+        }
+
+    }
+
+    temp = arr[max];
+
+    arr[max] = arr[i];
+
+    arr[i] = temp;
+
+}
+
+}
+
+[5/18, 9:32 AM] Amit Naik: void bubbleSort(int arr[], int n)
+
+{
+
+int i, j, max, temp;
+
+for (i = 0; i < n - 1; i++)
+
+{
+
+    for (j = 0; j < n-i-1; j++)
+
+    {
+
+        if (arr[j] > arr[j+1])
+
+        {
+
+            temp = arr[j];
+
+            arr[j] = arr[j+1];
+
+            arr[j+1] = temp;
+
+        }
+
+    }
+
+}
+
+}
+
+[5/18, 9:33 AM] Amit Naik: void traverse()
+
+{
+
+	struct node* temp;
+
+	if (start == NULL)
+
+		printf("\nList is empty\n");
+
+	else {
+
+		temp = start;
+
+		while (temp != NULL) {
+
+			printf("Data = %d\n", temp->info);
+
+			temp = temp->link;
+
+		}
+
+	}
+
+}
+
+void insertAtFront()
+
+{
+
+	int data;
+
+	struct node* temp;
+
+	temp = malloc(sizeof(struct node));
+
+	printf("\nEnter number to"
+
+		" be inserted : ");
+
+	scanf("%d", &data);
+
+	temp->info = data;
+
+	temp->link = start;
+
+	start = temp;
+
+}
+
+[5/18, 9:33 AM] Amit Naik: void deleteFirst()
+
+{
+
+	struct node* temp;
+
+	if (start == NULL)
+
+		printf("\nList is empty\n");
+
+	else {
+
+		temp = start;
+
+		start = start->link;
+
+		free(temp);
+
+	}
+
+}
+
+[5/18, 9:34 AM] Amit Naik: struct node {
+
+	int info;
+
+	struct node* link;
+
+};
+
+struct node* start = NULL;
